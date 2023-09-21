@@ -10,8 +10,26 @@
 # Set main reusable colors and fonts using CSS variables
 # Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --------------------------------------------------------------*/
-/* Fonts */
-
+.vid {
+  border-radius: 20px;}
+/* Fonts */ @media(max-width: 768px) {
+  .vid {
+    border-radius: 20px;
+    height: 220px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+  .vid {
+    border-radius: 20px;
+    height: 400px;
+  }
+  }
+@media(max-width: 768px ) {
+  .vid {
+    border-radius: 20px;
+    height: 220px;
+  }
+}
 @media (max-width: 768px) {
   .page-header .img {width: 100px;}
 }
@@ -24,7 +42,7 @@
 /* Colors */
 :root {
   --color-default: #fafafa;
-  --color-primary: #a17400;
+  --color-primary: #05a100;
   --color-secondary: #161718;
 }
 
@@ -144,7 +162,7 @@ h6 {
 }
 
 .page-header .cta-btn:hover {
-  background: #2cbc85;
+  background: #b28104;
 }
 
 /*--------------------------------------------------------------
@@ -154,12 +172,12 @@ h6 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
+  right: 30px;
   bottom: -15px;
   z-index: 99999;
   background: var(--color-primary);
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   border-radius: 50px;
   transition: all 0.4s;
 }
@@ -296,6 +314,8 @@ h6 {
   z-index: 997;
   padding: 30px 0;
   background-color: #000;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 .header .logo {
@@ -303,8 +323,9 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 40px;
+  max-height: 60px;
   margin-right: 8px;
+  margin-top: -10px;
 }
 
 .header .logo h1 {
@@ -483,7 +504,7 @@ h6 {
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
   .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -100%;
     width: 100%;
@@ -494,7 +515,7 @@ h6 {
   }
 
   .navbar ul {
-    position: absolute;
+    position: static;
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
@@ -731,7 +752,7 @@ h6 {
 # Pricing Section
 --------------------------------------------------------------*/
 .gallery {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .gallery .gallery-item {
