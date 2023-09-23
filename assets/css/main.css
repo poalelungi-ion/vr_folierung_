@@ -1308,3 +1308,55 @@ h6 {
 .footer .credits a {
   color: var(--color-primary);
 }
+
+.photo-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block; /* Keeps the container size based on the image */
+}
+
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+          circle at center,
+          transparent 0%,
+          rgba(0, 0, 0, 0.55) 50% /* Adjust the size and opacity of the vignette effect */
+  );
+  pointer-events: none; /* Allows clicks to pass through the overlay */
+}
+
+.photo-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* Existing CSS styles */
+
+/* Add these styles for dropdown menu */
+.navbar .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-secondary);
+  min-width: 200px;
+  border-radius: 4px;
+  z-index: 99;
+}
+
+.navbar .dropdown:hover .sub-menu {
+  display: block;
+}
+
+.navbar .dropdown .dropdown-toggle::after {
+  content: "\25BC"; /* Downward triangle or any other indicator you prefer */
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Existing CSS styles */
+
