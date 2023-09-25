@@ -1,20 +1,6 @@
-/*!
-  * Bootstrap v5.3.1 (https://getbootstrap.com/)
-  * Copyright 2011-2023 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+
 import * as Popper from '@popperjs/core';
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/data.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-/**
- * Constants
- */
 
 const elementMap = new Map();
 const Data = {
@@ -53,22 +39,10 @@ const Data = {
   }
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/index.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
 const MAX_UID = 1000000;
 const MILLISECONDS_MULTIPLIER = 1000;
 const TRANSITION_END = 'transitionend';
-
-/**
- * Properly escape IDs selectors to handle weird IDs
- * @param {string} selector
- * @returns {string}
- */
 const parseSelector = selector => {
   if (selector && window.CSS && window.CSS.escape) {
     // document.querySelector needs escaping to handle IDs (html5+) containing for instance /
@@ -84,11 +58,6 @@ const toType = object => {
   }
   return Object.prototype.toString.call(object).match(/\s([a-z]+)/i)[1].toLowerCase();
 };
-
-/**
- * Public Util API
- */
-
 const getUID = prefix => {
   do {
     prefix += Math.floor(Math.random() * MAX_UID);
@@ -195,14 +164,6 @@ const findShadowRoot = element => {
 };
 const noop = () => {};
 
-/**
- * Trick to restart an element's animation
- *
- * @param {HTMLElement} element
- * @return void
- *
- * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
- */
 const reflow = element => {
   element.offsetHeight; // eslint-disable-line no-unused-expressions
 };
@@ -274,16 +235,6 @@ const executeAfterTransition = (callback, transitionElement, waitForTransition =
     }
   }, emulatedDuration);
 };
-
-/**
- * Return the previous/next element of a list.
- *
- * @param {array} list    The list of elements
- * @param activeElement   The active element
- * @param shouldGetNext   Choose to get next or previous element
- * @param isCycleAllowed
- * @return {Element|elem} The proper element
- */
 const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed) => {
   const listLength = list.length;
   let index = list.indexOf(activeElement);
@@ -300,18 +251,6 @@ const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed
   return list[Math.max(0, Math.min(index, listLength - 1))];
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/event-handler.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
-
 const namespaceRegex = /[^.]*(?=\..*)\.|.*/;
 const stripNameRegex = /\..*/;
 const stripUidRegex = /::\d+$/;
@@ -322,10 +261,6 @@ const customEvents = {
   mouseleave: 'mouseout'
 };
 const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'pointerdown', 'pointermove', 'pointerup', 'pointerleave', 'pointercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
-
-/**
- * Private methods
- */
 
 function makeEventUid(element, uid) {
   return uid && `${uid}::${uidEvent++}` || element.uidEvent || uidEvent++;
@@ -522,12 +457,6 @@ function hydrateObj(obj, meta = {}) {
   return obj;
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/manipulator.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
 function normalizeData(value) {
   if (value === 'true') {
@@ -578,19 +507,6 @@ const Manipulator = {
     return normalizeData(element.getAttribute(`data-bs-${normalizeDataKey(key)}`));
   }
 };
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/config.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Class definition
- */
-
 class Config {
   // Getters
   static get Default() {
@@ -632,23 +548,8 @@ class Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap base-component.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
-
 const VERSION = '5.3.1';
 
-/**
- * Class definition
- */
 
 class BaseComponent extends Config {
   constructor(element, config) {
@@ -701,22 +602,12 @@ class BaseComponent extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/selector-engine.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
 const getSelector = element => {
   let selector = element.getAttribute('data-bs-target');
   if (!selector || selector === '#') {
     let hrefAttribute = element.getAttribute('href');
 
-    // The only valid content that could double as a selector are IDs or classes,
-    // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
-    // `document.querySelector` will rightfully complain it is invalid.
-    // See https://github.com/twbs/bootstrap/issues/32273
     if (!hrefAttribute || !hrefAttribute.includes('#') && !hrefAttribute.startsWith('.')) {
       return null;
     }
@@ -789,14 +680,6 @@ const SelectorEngine = {
     return selector ? SelectorEngine.find(selector) : [];
   }
 };
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/component-functions.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
 const enableDismissTrigger = (component, method = 'hide') => {
   const clickEvent = `click.dismiss${component.EVENT_KEY}`;
   const name = component.NAME;
@@ -815,17 +698,6 @@ const enableDismissTrigger = (component, method = 'hide') => {
   });
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap alert.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$f = 'alert';
 const DATA_KEY$a = 'bs.alert';
@@ -834,11 +706,6 @@ const EVENT_CLOSE = `close${EVENT_KEY$b}`;
 const EVENT_CLOSED = `closed${EVENT_KEY$b}`;
 const CLASS_NAME_FADE$5 = 'fade';
 const CLASS_NAME_SHOW$8 = 'show';
-
-/**
- * Class definition
- */
-
 class Alert extends BaseComponent {
   // Getters
   static get NAME() {
@@ -878,29 +745,11 @@ class Alert extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
-
 enableDismissTrigger(Alert, 'close');
-
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Alert);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap button.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$e = 'button';
 const DATA_KEY$9 = 'bs.button';
@@ -909,11 +758,6 @@ const DATA_API_KEY$6 = '.data-api';
 const CLASS_NAME_ACTIVE$3 = 'active';
 const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
 const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
-
-/**
- * Class definition
- */
-
 class Button extends BaseComponent {
   // Getters
   static get NAME() {
@@ -948,23 +792,11 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, event 
   data.toggle();
 });
 
-/**
- * jQuery
- */
+
 
 defineJQueryPlugin(Button);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/swipe.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$d = 'swipe';
 const EVENT_KEY$9 = '.bs.swipe';
@@ -988,9 +820,7 @@ const DefaultType$c = {
   rightCallback: '(function|null)'
 };
 
-/**
- * Class definition
- */
+
 
 class Swipe extends Config {
   constructor(element, config) {
@@ -1073,18 +903,6 @@ class Swipe extends Config {
     return 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
   }
 }
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap carousel.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$c = 'carousel';
 const DATA_KEY$8 = 'bs.carousel';
@@ -1256,14 +1074,6 @@ class Carousel extends BaseComponent {
       if (this._config.pause !== 'hover') {
         return;
       }
-
-      // If it's a touch-enabled device, mouseenter/leave are fired as
-      // part of the mouse compatibility events on first tap - the carousel
-      // would stop cycling until user tapped out of it;
-      // here, we listen for touchend, explicitly pause the carousel
-      // (as if it's the second time we tap on it, mouseenter compat event
-      // is NOT fired) and after a timeout (to allow for mouse compatibility
-      // events to fire) we explicitly restart cycling
 
       this.pause();
       if (this.touchTimeout) {
