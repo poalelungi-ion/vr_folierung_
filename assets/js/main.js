@@ -165,3 +165,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const widget = document.querySelector('.whatsapp-chat-widget');
+  const closeButton = document.querySelector('.close-button');
+
+  closeButton.addEventListener('click', function () {
+    widget.style.display = 'none';
+  });
+
+  const inputField = document.querySelector('.chat-input input');
+  const sendButton = document.querySelector('.send-button');
+  const chatBody = document.querySelector('.chat-body');
+
+  sendButton.addEventListener('click', function () {
+    const message = inputField.value.trim();
+    if (message !== '') {
+      const messageElement = document.createElement('div');
+      messageElement.className = 'message';
+      messageElement.textContent = message;
+      chatBody.appendChild(messageElement);
+      inputField.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+  });
+});
