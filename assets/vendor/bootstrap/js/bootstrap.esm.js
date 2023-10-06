@@ -1219,9 +1219,7 @@ class Carousel extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
+
 
 EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
@@ -1251,23 +1249,10 @@ EventHandler.on(window, EVENT_LOAD_DATA_API$3, () => {
   }
 });
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Carousel);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap collapse.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$b = 'collapse';
 const DATA_KEY$7 = 'bs.collapse';
@@ -1297,9 +1282,6 @@ const DefaultType$a = {
   toggle: 'boolean'
 };
 
-/**
- * Class definition
- */
 
 class Collapse extends BaseComponent {
   constructor(element, config) {
@@ -1469,9 +1451,7 @@ class Collapse extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
+
 
 EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
   // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
@@ -1485,23 +1465,9 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, functi
   }
 });
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Collapse);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dropdown.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$a = 'dropdown';
 const DATA_KEY$6 = 'bs.dropdown';
@@ -1557,9 +1523,7 @@ const DefaultType$9 = {
   reference: '(string|element|object)'
 };
 
-/**
- * Class definition
- */
+
 
 class Dropdown extends BaseComponent {
   constructor(element, config) {
@@ -1853,23 +1817,10 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, functi
   Dropdown.getOrCreateInstance(this).toggle();
 });
 
-/**
- * jQuery
- */
+
 
 defineJQueryPlugin(Dropdown);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/backdrop.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$9 = 'backdrop';
 const CLASS_NAME_FADE$4 = 'fade';
@@ -1892,9 +1843,6 @@ const DefaultType$8 = {
   rootElement: '(element|string)'
 };
 
-/**
- * Class definition
- */
 
 class Backdrop extends Config {
   constructor(config) {
@@ -1984,17 +1932,6 @@ class Backdrop extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/focustrap.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$8 = 'focustrap';
 const DATA_KEY$5 = 'bs.focustrap';
@@ -2014,9 +1951,6 @@ const DefaultType$7 = {
   trapElement: 'element'
 };
 
-/**
- * Class definition
- */
 
 class FocusTrap extends Config {
   constructor(config) {
@@ -2083,26 +2017,11 @@ class FocusTrap extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/scrollBar.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
 const SELECTOR_STICKY_CONTENT = '.sticky-top';
 const PROPERTY_PADDING = 'padding-right';
 const PROPERTY_MARGIN = 'margin-right';
-
-/**
- * Class definition
- */
 
 class ScrollBarHelper {
   constructor() {
@@ -2181,17 +2100,6 @@ class ScrollBarHelper {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap modal.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$7 = 'modal';
 const DATA_KEY$4 = 'bs.modal';
@@ -2226,10 +2134,6 @@ const DefaultType$6 = {
   focus: 'boolean',
   keyboard: 'boolean'
 };
-
-/**
- * Class definition
- */
 
 class Modal extends BaseComponent {
   constructor(element, config) {
@@ -2412,9 +2316,6 @@ class Modal extends BaseComponent {
     this._element.focus();
   }
 
-  /**
-   * The following methods are used to handle overflowing modals
-   */
 
   _adjustDialog() {
     const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
@@ -2449,9 +2350,6 @@ class Modal extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
 
 EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
@@ -2480,23 +2378,10 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, functi
 });
 enableDismissTrigger(Modal);
 
-/**
- * jQuery
- */
+
 
 defineJQueryPlugin(Modal);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap offcanvas.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$6 = 'offcanvas';
 const DATA_KEY$3 = 'bs.offcanvas';
@@ -2529,9 +2414,6 @@ const DefaultType$5 = {
   scroll: 'boolean'
 };
 
-/**
- * Class definition
- */
 
 class Offcanvas extends BaseComponent {
   constructor(element, config) {
@@ -2670,9 +2552,6 @@ class Offcanvas extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
 
 EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
   const target = SelectorEngine.getElementFromSelector(this);
@@ -2711,18 +2590,9 @@ EventHandler.on(window, EVENT_RESIZE, () => {
 });
 enableDismissTrigger(Offcanvas);
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Offcanvas);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/sanitizer.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
 // js-docs-start allow-list
 const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
@@ -2763,12 +2633,6 @@ const DefaultAllowlist = {
 
 const uriAttributes = new Set(['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
 
-/**
- * A pattern that recognizes URLs that are safe wrt. XSS in URL navigation
- * contexts.
- *
- * Shout-out to Angular https://github.com/angular/angular/blob/15.2.8/packages/core/src/sanitization/url_sanitizer.ts#L38
- */
 // eslint-disable-next-line unicorn/better-regex
 const SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
 const allowedAttribute = (attribute, allowedAttributeList) => {
@@ -2810,17 +2674,6 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
   return createdDocument.body.innerHTML;
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/template-factory.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$5 = 'TemplateFactory';
 const Default$4 = {
@@ -2847,9 +2700,6 @@ const DefaultContentType = {
   selector: '(string|element)'
 };
 
-/**
- * Class definition
- */
 
 class TemplateFactory extends Config {
   constructor(config) {
@@ -2946,17 +2796,6 @@ class TemplateFactory extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap tooltip.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$4 = 'tooltip';
 const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
@@ -3026,9 +2865,6 @@ const DefaultType$3 = {
   trigger: 'string'
 };
 
-/**
- * Class definition
- */
 
 class Tooltip extends BaseComponent {
   constructor(element, config) {
@@ -3123,10 +2959,6 @@ class Tooltip extends BaseComponent {
     this._popper = this._createPopper(tip);
     tip.classList.add(CLASS_NAME_SHOW$2);
 
-    // If this is a touch-enabled device we add extra
-    // empty mouseover listeners to the body's immediate children;
-    // only needed because of broken event delegation on iOS
-    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
     if ('ontouchstart' in document.documentElement) {
       for (const element of [].concat(...document.body.children)) {
         EventHandler.on(element, 'mouseover', noop);
@@ -3152,8 +2984,6 @@ class Tooltip extends BaseComponent {
     const tip = this._getTipElement();
     tip.classList.remove(CLASS_NAME_SHOW$2);
 
-    // If this is a touch-enabled device we remove the extra
-    // empty mouseover listeners we added for iOS support
     if ('ontouchstart' in document.documentElement) {
       for (const element of [].concat(...document.body.children)) {
         EventHandler.off(element, 'mouseover', noop);
@@ -3452,23 +3282,9 @@ class Tooltip extends BaseComponent {
   }
 }
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Tooltip);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap popover.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$3 = 'popover';
 const SELECTOR_TITLE = '.popover-header';
@@ -3486,9 +3302,6 @@ const DefaultType$2 = {
   content: '(null|string|element|function)'
 };
 
-/**
- * Class definition
- */
 
 class Popover extends Tooltip {
   // Getters
@@ -3533,23 +3346,9 @@ class Popover extends Tooltip {
   }
 }
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Popover);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap scrollspy.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$2 = 'scrollspy';
 const DATA_KEY$2 = 'bs.scrollspy';
@@ -3586,9 +3385,7 @@ const DefaultType$1 = {
   threshold: 'array'
 };
 
-/**
- * Class definition
- */
+
 
 class ScrollSpy extends BaseComponent {
   constructor(element, config) {
@@ -3793,23 +3590,9 @@ EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => {
   }
 });
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(ScrollSpy);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap tab.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$1 = 'tab';
 const DATA_KEY$1 = 'bs.tab';
@@ -3841,9 +3624,6 @@ const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [
 const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
 const SELECTOR_DATA_TOGGLE_ACTIVE = `.${CLASS_NAME_ACTIVE}[data-bs-toggle="tab"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="pill"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="list"]`;
 
-/**
- * Class definition
- */
 
 class Tab extends BaseComponent {
   constructor(element) {
@@ -4041,9 +3821,7 @@ class Tab extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
+
 
 EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
   if (['A', 'AREA'].includes(this.tagName)) {
@@ -4055,31 +3833,17 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
   Tab.getOrCreateInstance(this).show();
 });
 
-/**
- * Initialize on focus
- */
+
 EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
   for (const element of SelectorEngine.find(SELECTOR_DATA_TOGGLE_ACTIVE)) {
     Tab.getOrCreateInstance(element);
   }
 });
-/**
- * jQuery
- */
+
 
 defineJQueryPlugin(Tab);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap toast.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME = 'toast';
 const DATA_KEY = 'bs.toast';
@@ -4241,17 +4005,10 @@ class Toast extends BaseComponent {
   }
 }
 
-/**
- * Data API implementation
- */
 
 enableDismissTrigger(Toast);
 
-/**
- * jQuery
- */
 
 defineJQueryPlugin(Toast);
 
 export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip };
-//# sourceMappingURL=bootstrap.esm.js.map
