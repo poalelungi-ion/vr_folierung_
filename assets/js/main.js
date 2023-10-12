@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
       setTimeout(() => {
         preloader.classList.add('loaded');
-      }, 1000);
+      }, 100);
       setTimeout(() => {
         preloader.remove();
-      }, 2000);
+      }, 200);
     });
   }
 
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       320: {
-        slidesPerView: 1,
+        slidesPerView: 1000,
         spaceBetween: 40
       },
 
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function aos_init() {
     AOS.init({
-      duration: 1000,
+      duration: 1,
       easing: 'ease-in-out',
       once: true,
       mirror: false
