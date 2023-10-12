@@ -311,7 +311,7 @@ h6 {
   height: 100%;
   transform: translateY(-100%);
   animation: linemove 1200ms linear 0s infinite;
-  animation-delay: 2000ms;
+  animation-delay: 2ms;
 }
 
 #preloader.loaded .line {
